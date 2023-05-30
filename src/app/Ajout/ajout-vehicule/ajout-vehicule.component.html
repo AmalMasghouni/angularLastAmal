@@ -1,0 +1,131 @@
+<div class="content-wrapper">
+  <!-- Content -->
+
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4">Ajout Véhicule</h4>
+
+    <!-- Basic Layout & Basic with Icons -->
+    <div class="row">
+      <!-- Basic Layout -->
+      <div class="col-xxl">
+        <div class="card mb-4">
+
+          <div class="card-body">
+
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">nom véhicule</label>
+                <div class="col-sm-10">
+                  <input [(ngModel)]="vehidDto.nomVeh" type="text" class="form-control" id="basic-default-name" placeholder="Nom vehicule" />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-company"> Nom Interne</label>
+                <div class="col-sm-10">
+                  <input [(ngModel)]="vehidDto.nomInterne"
+                    type="text"
+                    class="form-control"
+
+                    placeholder="nom Interne"
+                  />
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">nom marque</label>
+                <div class="col-sm-10">
+                  <!--input [(ngModel)]="vehidDto.marque" type="text" class="form-control" id="basic-default-name" placeholder="Nom Marque" /-->
+                  <select [(ngModel)]="vehidDto.marque"  class="form-select" >
+                    <option selected value ="">Tous</option>
+                    <option *ngFor="let o of marque " [value]="o">{{o}}</option>
+
+                  </select>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-email">testGlobal</label>
+                <div class="col-sm-10">
+                  <div class="input-group input-group-merge">
+                    <input [(ngModel)]="vehidDto.testGlobal" type="checkbox"class="form-check-input" placeholder="testGlobal"/>
+                 </div>
+
+                </div>
+              </div>
+              <div class="row mb-3">
+              <label class="col-sm-2 col-form-label" for="basic-default-email">Uniquement électrique :</label>
+              <div class="col-sm-10">
+                <div class="input-group input-group-merge">
+                  <input  value="true"  [(ngModel)]="vehidDto.onlyElec" type="checkbox"class="form-check-input" />
+               </div>
+
+              </div>
+            </div>
+            <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" for="basic-default-email">Avertissement électrique:</label>
+            <div class="col-sm-10">
+              <div class="input-group input-group-merge">
+                <input  value="true"  [(ngModel)]="vehidDto.avertissElec" type="checkbox"class="form-check-input" />
+             </div>
+
+            </div>
+          </div>
+          <div class="row mb-3">
+          <label class="col-sm-2 col-form-label" for="basic-default-email">Avertissement Hybride:</label>
+          <div class="col-sm-10">
+            <div class="input-group input-group-merge">
+              <input  value="true" [(ngModel)]="vehidDto.avertissHybrid" type="checkbox"class="form-check-input" />
+           </div>
+          </div>
+<!--div class="row mb-3">
+                <label class="col-sm-2 col-form-label " >Groupe de Marque</label>
+                  <div class="col-sm-10  " >
+                  <input [(ngModel)]="vehidDto.grpMarq" class="form-control" type="text" placeholder="Groupe de Marque" />
+
+                </div>
+              </div-->
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label " >Message Diag</label>
+                  <div class="col-sm-10  " >
+                  <input [(ngModel)]="vehidDto.msgDiag" class="form-control" type="text" placeholder="Message Diag" />
+                  </div>
+                </div>
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label " >from</label>
+                  <div class="col-sm-10  " >
+                  <input [(ngModel)]="vehidDto.fro" class="form-control" type="date" placeholder="From"/>
+
+                </div>
+              </div >
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label " >To</label>
+                  <div class="col-sm-10  " >
+                  <input  [(ngModel)]="vehidDto.t"class="form-control" type="text" placeholder="To" />
+
+                </div>
+              </div >
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label " >remarque</label>
+                  <div class="col-sm-10  " >
+                  <input [(ngModel)]="vehidDto.remarque"class="form-control" type="text" placeholder="Remarque"/>
+
+                </div>
+              </div >
+
+              <div class="row justify-content-end">
+                <div class="col-sm-10">
+                  <button type="submit" class="btn btn-primary" (click)="ajouter()" (click)="test()">Ajouter</button>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- / Content -->
+
+
+
+  <div class="content-backdrop fade"></div>
+</div>
+</div>

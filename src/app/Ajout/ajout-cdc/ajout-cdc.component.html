@@ -1,0 +1,95 @@
+<div class="content-wrapper">
+  <!-- Content -->
+
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4">Ajout CDC</h4>
+
+    <!-- Basic Layout & Basic with Icons -->
+    <div class="row">
+      <!-- Basic Layout -->
+      <div class="col-xxl">
+        <div class="card mb-4">
+
+          <div class="card-body">
+
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">Nom CDC</label>
+                <div class="col-sm-10">
+                  <input [(ngModel)]="cdc.nomCDC" type="text" class="form-control" id="basic-default-name" placeholder="Nom CDC" />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-company">Ref CDC</label>
+                <div class="col-sm-10">
+                  <input [(ngModel)]="cdc.refCDC"
+                    type="text"
+                    class="form-control"
+                    id="basic-default-company"
+                    placeholder="ref CDC"
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-email">ind CDC</label>
+                <div class="col-sm-10">
+                  <div class="input-group input-group-merge">
+                    <input [(ngModel)]="cdc.indCDC" type="text"class="form-control" placeholder="ind CDC"/>
+                 </div>
+
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" >Creation</label>
+                <div class="col-sm-10">
+                  <input [(ngModel)]="cdc.creation" class="form-control" type="date" value="2021-06-18" id="html5-date-input" />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label " >Signature</label>
+                  <div class="col-sm-10  form-check-inline" >
+                  <input [(ngModel)]="cdc.signatureOk" class="form-check-input" type="checkbox" value="true" />
+                  <label class="form-check-label">true</label>
+                </div>
+              </div >
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" >refCDCArdia</label>
+                <div class="col-sm-10">
+                  <input [(ngModel)]="cdc.refCDCArdia" class="form-control" type="text" placeholder="refCDCArdia"/>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlSelect1" class="form-label">Site</label>
+                <select [(ngModel)]="cdc.idSite" class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
+                  <option selected value="">Selectionner Site</option>
+                  <option *ngFor="let o of option " [value]="o">{{o}}</option>
+
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlSelect1" class="form-label">Reverse</label>
+                <select  class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
+                  <option selected value="">Selectionner Reverse</option>
+                  <option >Reverse</option>
+
+                </select>
+              </div>
+              <div class="row justify-content-end">
+                <div class="col-sm-10">
+                  <button type="submit" class="btn btn-primary"  (click)="test()">Ajouter</button>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- / Content -->
+
+
+
+  <div class="content-backdrop fade"></div>
+</div>

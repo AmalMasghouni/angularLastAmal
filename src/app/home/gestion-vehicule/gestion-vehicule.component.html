@@ -1,0 +1,78 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+  <div class=" py-3 mb-4">
+  <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+    <!-- Search -->
+      <div class="navbar-nav align-items-center">
+      <div class="nav-item d-flex align-items-center">
+        <i class="bx bx-search fs-4 lh-0"></i>
+        <input [(ngModel)]="searchTerm"type="text"class="form-control border-0 shadow-none"placeholder="Nom Véhicule"(input)="performSearch()"/>
+
+      </div>
+    </div>
+
+  </div>
+
+<hr class="my-5" />
+
+  <!-- Bordered Table -->
+  <button class="btn btn-primary" type="button" id="button-addon2" (click)="exportToExcel()">Exporter en Excel</button>
+
+  <div class="card">
+
+    <h5 class="card-header">Liste vehicule</h5>
+    <button routerLink="/ajout-vehicule" class="btn btn-primary" type="button" id="button-addon2">Ajouter</button>
+    <div class="card-body">
+      <div class="table-responsive text-nowrap">
+        <table class="table table-bordered" id="my-table">
+          <thead>
+            <tr>
+              <th>Nom Véhicule</th>
+              <th>Nom Interne</th>
+              <th>marque</th>
+              <th>Groupe de Marque</th>
+              <th>from</th>
+              <th>to</th>
+              <th>mise A jour</th>
+               <th>Remarque</th>
+          <th>msgDiag</th>
+          <th>testGlobal</th>
+          <th>onlyElec</th>
+          <th>avertissElec</th>
+          <th>avertissHybrid</th>
+              <th>Actions </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let voiture of vehicule ">
+              <td>{{voiture.nomVeh}}</td>
+              <td>{{voiture.nomInterne}}</td>
+              <td>{{voiture.marque}}</td>
+              <td>{{voiture.grpMarq}}</td>
+              <td>{{voiture.fro}}</td>
+              <td>{{voiture.t}}</td>
+              <td>{{voiture.upd}}</td>
+              <td>{{voiture.remarque}}</td>
+              <td>{{voiture.msgDiag}}</td>
+              <td>{{voiture.testGlobal}}</td>
+              <td>{{voiture.onlyElec}}</td>
+              <td>{{voiture.avertissElec}}</td>
+              <td>{{voiture.avertissHybrid}}</td>
+              <td>
+                <div class="dropdown">
+                  <button class="btn btn-warning" [routerLink]="['/modifier-vehicule',voiture.codeVeh]"><i class="bx bx-edit-alt me-1"></i> </button>
+                  <button class="btn btn-danger" (click)="delete(voiture.codeVeh)"> <i class="bx bx-trash me-1"></i> </button>
+                 </div>
+
+              </td>
+            </tr>
+
+
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!--/ Bordered Table -->
+</div>
+</div>

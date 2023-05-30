@@ -1,0 +1,84 @@
+
+<div class="container-xxl flex-grow-1 container-p-y">
+  <div class=" py-3 mb-4">
+  <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+    <!-- Search -->
+      <div class="navbar-nav align-items-center">
+      <div class="nav-item d-flex align-items-center">
+        <i class="bx bx-search fs-4 lh-0"></i>
+        <input
+          type="text"
+          class="form-control border-0 shadow-none"
+          placeholder="Search..."
+          aria-label="Search..."
+        />
+        <button  class="btn btn-outline-primary" type="button" id="button-addon2" style="color: #D1D2D5;">Chercher</button>
+      </div>
+    </div>
+
+  </div>
+
+<hr class="my-5" />
+
+  <!-- Bordered Table -->
+  <div class="card">
+    <h5 class="card-header">Liste des utilisateurs</h5>
+    <button routerLink="/ajout-utilisateur" class="btn btn-primary" type="button" id="button-addon2">Ajouter</button>
+    <div class="card-body">
+      <div class="table-responsive text-nowrap">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Prenom</th>
+
+              <th>Responsable Equipe</th>
+              <th>Code Emlpoye</th>
+              <th>Role</th>
+              <th>Site</th>
+              <th>Actions </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let u of utlisateur">
+              <td>{{u.firstName}}</td>
+              <td>{{u.lastName}}</td>
+              <td>{{u.responsableequipe}}</td>
+              <td>{{u.employeecode}}</td>
+              <td>{{u.role}}</td>
+              <td>{{u.site}}</td>
+              <td>
+                <div class="dropdown">
+                  <button class="btn btn-warning"  [routerLink]="['/modifier-utilisateur',u.id]"><i class="bx bx-edit-alt me-1"></i> </button>
+                  <button class="btn btn-danger" (click)="delete(u.id)"> <i class="bx bx-trash me-1"></i> </button>
+                 </div>
+
+              </td>
+            </tr>
+
+
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!--/ Bordered Table -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>

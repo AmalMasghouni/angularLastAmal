@@ -1,0 +1,15 @@
+.button-between-textareas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button-between-textareas button {
+  padding: 10px 20px;
+  background-color: #428bca;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

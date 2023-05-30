@@ -1,0 +1,53 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+  <div class=" py-3 mb-4">
+
+
+
+  <!-- Bordered Table -->
+  <div class="card">
+    <h5 class="card-header">Liste Cdc</h5>
+
+    <div class="card-body">
+      <div class="table-responsive text-nowrap">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Nom CDC</th>
+              <th>Ref Cdc</th>
+              <th>Ind</th>
+              <th>Site</th>
+
+              <th>Date Création</th>
+              <th>Document Signé</th>
+              <th>Ref CDC Ardia</th>
+              <th>Actions </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of cdc ">
+              <td>{{c.nomCDC}}</td>
+              <td>{{c.refCDC}}</td>
+              <td>{{c.indCDC}}</td>
+              <td>{{c.site}}</td>
+              <td>{{c.creation}}</td>
+              <td>{{c.signatureOk}}</td>
+              <td>{{c.refCDCArdia}}</td>
+              <td>
+                <div class="dropdown">
+                  <button class="btn btn-warning" (click)="selectionnerCDC(c.idCDC)">Selectionner</button>
+
+                 </div>
+
+              </td>
+            </tr>
+
+
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!--/ Bordered Table -->
+</div>
+</div>

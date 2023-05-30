@@ -1,0 +1,188 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+  <div class=" py-3 mb-4">
+  <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+
+
+
+
+
+        <div class="card-body">
+    <div class="mb-3">
+      <div class="row mb-5">
+        <div  class="col-md-6 col-lg-4 mb-3">
+      <label for="exampleFormControlSelect1" class="form-label" >Marque</label>
+      <select [(ngModel)]="selectedMarque" (change)="onMarqueSelected()"  class="form-select" >
+        <option selected value ="">Tous</option>
+        <option *ngFor="let o of marque " [value]="o">{{o}}</option>
+
+      </select>
+    </div>
+      <div  class="col-md-6 col-lg-4 mb-3">
+      <label for="exampleFormControlSelect1" class="form-label">Modèle</label>
+      <select [(ngModel)]="selectedModele"  class="form-select" >
+        <option selected value ="">Tous</option>
+        <option *ngFor="let o of modele " [value]="o">{{o}}</option>
+      </select>
+    </div>
+    <div  class="col-md-6 col-lg-4 mb-3">
+      <label for="exampleFormControlSelect1" class="form-label">Version</label>
+      <select [(ngModel)]="selectedVersion" class="form-select" >
+        <option selected value ="">Tous</option>
+        <option *ngFor="let o of version " [value]="o">{{o}}</option>
+      </select>
+    </div>
+
+    </div>
+    <div class="row mb-5">
+      <div  class="col-md-6 col-lg-4 mb-3">
+    <label for="exampleFormControlSelect1" class="form-label">Site</label>
+    <select [(ngModel)]="selectedSite"  class="form-select" >
+      <option selected value ="">Tous</option>
+      <option *ngFor="let o of site " [value]="o">{{o}}</option>
+    </select>
+  </div>
+    <div  class="col-md-6 col-lg-4 mb-3">
+    <label for="exampleFormControlSelect1" class="form-label">Developpeur</label>
+    <select [(ngModel)]="selectedUtilisateur" class="form-select" >
+      <option selected value ="">Tous</option>
+      <option *ngFor="let o of utilisateur " [value]="o">{{o}}</option>
+    </select>
+  </div>
+  <div  class="col-md-6 col-lg-4 mb-3">
+    <label for="exampleFormControlSelect1" class="form-label">Ref CDC</label>
+    <select [(ngModel)]="selectedRefCdc"  class="form-select" >
+      <option selected value ="">Tous</option>
+      <option *ngFor="let o of refCdc " [value]="o">{{o}}</option>
+    </select>
+  </div>
+  </div>
+  <div class="row mb-5">
+    <div  class="col-md-6 col-lg-4 mb-3">
+      <button  class="btn btn-primary" type="button" id="button-addon2"(click)="updateFilteredData()" >Lancer Recherche</button>
+    </div>
+  </div>
+
+    </div>
+
+        </div>
+
+
+  </div>
+  <div class="row mb-5">
+    <div  class="col-md-6 col-lg-4 mb-3">
+      <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+        <!-- Search -->
+          <div class="navbar-nav align-items-center">
+          <div class="nav-item d-flex align-items-center">
+            <input [(ngModel)]="searchTermDll"
+            (input)="SearchDll()"
+
+              type="text"
+              class="form-control border-0 shadow-none"
+              placeholder="chercher DLL."
+
+            />
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div  class="col-md-6 col-lg-4 mb-3">
+      <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+        <!-- Search -->
+          <div class="navbar-nav align-items-center">
+          <div class="nav-item d-flex align-items-center">
+            <input [(ngModel)]="searchTermNDev"
+            (input)="SearchNdev()"
+              type="text"
+              class="form-control border-0 shadow-none"
+              placeholder="chercher DEV"
+
+            />
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<hr class="my-5" />
+<button class="btn btn-primary" type="button" id="button-addon2" (click)="exportToExcel()">Exporter en Excel</button>
+
+  <!-- Bordered Table -->
+  <div class="card">
+
+    <h5 class="card-header">Liste utilisateur</h5>
+
+    <button routerLink="/ajout-utilisateur"  class="btn btn-primary" type="button" id="button-addon2">Ajouter</button>
+    <div class="card-body">
+      <div class="table-responsive text-nowrap">
+        <table class="table table-bordered" id="my-table">
+          <thead>
+            <tr>
+              <th >N</th>
+              <th >Nom</th>
+             <th>Etat</th>
+             <th>CDC</th>
+             <th>nomCDC</th>
+             <th>DLL</th>
+             <th>Famille</th>
+             <th>ECU</th>
+             <th>BUG</th>
+             <th>Developpeur </th>
+             <th>Action</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <tr *ngFor="let dev of devl "
+                           >
+
+                              <td>{{dev.n}}</td>
+                              <td>{{dev.nomDev}}</td>
+                              <td>{{dev.etatDev}}</td>
+                              <td>{{dev.refCdc}}</td>
+                              <td>{{dev.cdc}}</td>
+                              <td>{{dev.nomDll}}</td>
+                              <td>{{dev.famille}}</td>
+                              <td>{{dev.ecu}}</td>
+                              <td>{{dev.bug}}</td>
+                              <td>{{dev.utilisateur}}</td>
+              <td>
+                <div class="dropdown">
+                 <button class="btn btn-warning" [routerLink]="['/consulter-dev',dev.n]">Consulter</button>
+
+                </div>
+
+              </td>
+            </tr>
+
+
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!--/ Bordered Table -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>

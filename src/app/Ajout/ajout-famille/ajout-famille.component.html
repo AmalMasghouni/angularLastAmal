@@ -1,0 +1,95 @@
+<div class="content-wrapper">
+  <!-- Content -->
+
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4">Ajout Famille</h4>
+
+    <!-- Basic Layout & Basic with Icons -->
+    <div class="row">
+      <!-- Basic Layout -->
+      <div class="col-xxl">
+        <div class="card mb-4">
+
+          <div class="card-body">
+
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">nom famille</label>
+                <div class="col-sm-10">
+                  <input [(ngModel)]="familleDto.nomFamille" type="text" class="form-control" id="basic-default-name" placeholder="Nom Famille" />
+                </div>
+              </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-email">guidedMethFilter</label>
+                <div class="col-sm-10">
+                  <div class="input-group input-group-merge">
+                    <input [(ngModel)]="familleDto.guidedMethFilter" type="checkbox"class="form-check-input" sparePartsFilter/>
+                 </div>
+
+                </div>
+              </div>
+              <div class="row mb-3">
+              <label class="col-sm-2 col-form-label" for="basic-default-email">sparePartsFilter</label>
+              <div class="col-sm-10">
+                <div class="input-group input-group-merge">
+                  <input  value="true"  [(ngModel)]="familleDto.sparePartsFilter" type="checkbox"class="form-check-input" />
+               </div>
+
+              </div>
+            </div>
+
+          <div class="row mb-3">
+                <label class="col-sm-2 col-form-label " >idFamilleHyne </label>
+                  <div class="col-sm-10  " >
+                  <input   [(ngModel)]="familleDto.idFamilleHynes" class="form-control" type="number" placeholder="Groupe de Marque" />
+                </div>
+              </div >
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label " >Phrase</label>
+                  <div class="col-sm-10  " >
+                  <input  [(ngModel)]="familleDto.phrase" class="form-control" type="text" placeholder="Phrase"/>
+                </div>
+              </div >
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label " >Ordre</label>
+                  <div class="col-sm-10  " >
+                  <input  [(ngModel)]="familleDto.ordre"class="form-control" type="number" placeholder="123..." />
+                </div>
+              </div >
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label " >Description </label>
+                  <div class="col-sm-10  " >
+                    <textarea [(ngModel)]="familleDto.description"class="form-control"  placeholder="Description" ></textarea>
+                  </div>
+              </div >
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label " >Description Anglais</label>
+                  <div class="col-sm-10  " >
+                    <textarea [(ngModel)]="familleDto.descrAnglais"class="form-control"  placeholder="Description Anglais" ></textarea>
+                  </div>
+              </div >
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label " >Description Haynes</label>
+                <div class="col-sm-10  " >
+                    <textarea [(ngModel)]="familleDto.descriptionHaynes"class="form-control"  placeholder="Description Haynes" ></textarea>
+                  </div>
+              </div >
+
+              <div class="row justify-content-end">
+                <div class="col-sm-10">
+                  <button type="submit" class="btn btn-primary" (click)="ajouter()">Ajouter</button>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- / Content -->
+
+
+
+  <div class="content-backdrop fade"></div>
+</div>
+

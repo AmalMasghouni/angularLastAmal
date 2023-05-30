@@ -1,0 +1,100 @@
+<div class="container-xxl">
+  <div class="authentication-wrapper authentication-basic container-p-y">
+    <div class="authentication-inner">
+      <!-- Register -->
+      <div class="card">
+        <div class="card-body">
+          <!-- Logo -->
+          <div class="app-brand justify-content-center">
+
+              <div class="center">
+                <img width="210" src="assets/assets/img/logo.png" alt="#" />
+             </div>
+
+
+          </div>
+          <!-- /Logo -->
+          <h4 class="mb-2">Bonjour ,Changer Votre mot de passe 🔒</h4>
+          <p class="mb-4">Veuillez remplir les cases pour continuer...</p>
+
+          <form id="formAuthentication" class="mb-3"  [formGroup]="changermotdepasseForm" (submit)="OnSubmit()">
+            <div class="mb-3">
+              <label for="email" class="form-label">Email </label>
+              <input [formControlName]="'email'"
+                type="text"
+                class="form-control"
+                id="email"
+                name="email-username"
+                placeholder="Enter your email "
+                autofocus
+              />
+              <span style="color:red;" *ngIf="changermotdepasseForm.controls.email.hasError('pattern')"  class="forgot" >
+                L'adresse email doit se terminer par @actia-engineering.tn
+              </span>
+            </div>
+            <div class="mb-3 form-password-toggle">
+              <div class="d-flex justify-content-between">
+                <label class="form-label" for="password">Ancien Mot de passe</label>
+              </div>
+              <div class="input-group input-group-merge">
+                <input [formControlName]="'mdpgenere'"
+                  type="password"
+                  id="password"
+                  class="form-control"
+                  name="password"
+
+                  aria-describedby="password"
+                />
+
+
+              </div>
+            </div>
+            <div class="mb-3 form-password-toggle">
+              <div class="d-flex justify-content-between">
+                <label class="form-label" for="password">Nouveau Mot de passe</label>
+              </div>
+              <div class="input-group input-group-merge">
+                <input [formControlName]="'nouveaumdp'"
+                  type="password"
+                  id="password"
+                  class="form-control"
+                  name="password"
+
+                  aria-describedby="password"
+                />
+                <span style="color:red;" class="invalid-email" *ngIf="changermotdepasseForm.controls.nouveaumdp.hasError('pattern')" class="forgot" >
+                  Mot de passe doit contenir une chiffre un majus et un minscule et un caractere speciale
+                </span>
+
+              </div>
+            </div>
+            <div class="mb-3 form-password-toggle">
+              <div class="d-flex justify-content-between">
+                <label class="form-label" for="password">Retapper Mot de passe</label>
+              </div>
+              <div class="input-group input-group-merge">
+                <input [formControlName]="'resetnouveaumdp'"
+                  type="password"
+                  id="password"
+                  class="form-control"
+                  name="password"
+
+                  aria-describedby="password"
+                />
+
+
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <button class="btn btn-primary d-grid w-100" type="submit">Changer Mot de passe </button>
+            </div>
+          </form>
+
+
+        </div>
+      </div>
+      <!-- /Register -->
+    </div>
+  </div>
+</div>

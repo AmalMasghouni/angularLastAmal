@@ -1,0 +1,37 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+  <div class=" py-3 mb-4">
+<!-- Bordered Table -->
+  <div class="card">
+    <h5 class="card-header">Liste Fonction du CDC</h5>
+
+    <div class="card-body">
+      <div class="table-responsive text-nowrap">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Nom Fonction</th>
+              <th>Actions </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let f of fonction">
+              <td>{{f.nom}}</td>
+              <td>
+                <div class="dropdown">
+                  <button class="btn btn-warning" (click)="select(f.id)">Selectionner</button>
+                </div>
+
+              </td>
+            </tr>
+
+
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+<!--/ Bordered Table -->
+</div>
+</div>

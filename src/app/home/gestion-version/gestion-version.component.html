@@ -1,0 +1,65 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+  <div class="fw-bold py-3 mb-4">
+  <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+    <!-- Search -->
+      <div class="navbar-nav align-items-center">
+      <div class="nav-item d-flex align-items-center">
+        <i class="bx bx-search fs-4 lh-0"></i>
+        <input
+          type="text"
+          class="form-control border-0 shadow-none"
+          placeholder="Search..."
+          aria-label="Search..."
+        />
+        <button  class="btn btn-outline-primary" type="button" id="button-addon2" style="color: #D1D2D5;">Chercher</button>
+      </div>
+    </div>
+
+  </div>
+
+<hr class="my-5" />
+
+  <!-- Bordered Table -->
+  <div class="card">
+    <h5 class="card-header">Liste version</h5>
+    <button routerLink="/ajout-version" class="btn btn-primary" type="button" id="button-addon2">Ajouter</button>
+    <div class="card-body">
+      <div class="table-responsive text-nowrap">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Project</th>
+              <th>Client</th>
+              <th>Users</th>
+              <th>Status</th>
+              <th>Actions </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+
+              <td>Albert Cook</td>
+              <td>
+
+              </td>
+              <td><span class="badge bg-label-primary me-1">Active</span></td>
+              <td>
+                <div class="dropdown">
+                  <button class="btn btn-warning" routerLink="/modifier-version"><i class="bx bx-edit-alt me-1"></i> </button>
+                  <button class="btn btn-danger"> <i class="bx bx-trash me-1"></i> </button>
+                 </div>
+
+              </td>
+            </tr>
+
+
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!--/ Bordered Table -->
+</div>
+</div>

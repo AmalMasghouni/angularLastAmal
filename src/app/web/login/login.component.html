@@ -1,0 +1,68 @@
+<div class="container-xxl">
+  <div class="authentication-wrapper authentication-basic container-p-y">
+    <div class="authentication-inner">
+      <!-- Register -->
+      <div class="card">
+        <div class="card-body">
+          <!-- Logo -->
+          <div class="app-brand justify-content-center">
+
+              <div class="center">
+                <img width="210" src="assets/assets/img/logo.png" alt="#" />
+             </div>
+
+
+          </div>
+          <!-- /Logo -->
+          <h4 class="mb-2">Bonjour ,Se connecter👋</h4>
+          <p class="mb-4">Veuillez remplir les cases pour continuer...</p>
+
+          <form [formGroup]="loginForm" (submit)="onSubmit()"class="mb-3"  >
+            <div class="mb-3">
+              <label for="email" class="form-label">Email </label>
+              <input [formControlName]="'email'"
+                type="text"
+                class="form-control"
+                id="email"
+                name="email-username"
+                placeholder="Enter your email "
+                autofocus
+              />
+              <span *ngIf="loginForm.controls.email.hasError('pattern')" style="color: red;" >
+                L'adresse email doit se terminer par @actia-engineering.tn
+              </span>
+            </div>
+            <div class="mb-3 form-password-toggle">
+              <div class="d-flex justify-content-between">
+                <label class="form-label" for="password">Mot de passe</label>
+                <a routerLink="/mot-de-passe-oublie">
+                  <small style="color: red;">Mot de passe oublié?</small>
+                </a>
+              </div>
+              <div [formControlName]="'password'" class="input-group input-group-merge">
+                <input
+                  type="password"
+                  id="password"
+                  class="form-control"
+                  name="password"
+
+                  aria-describedby="password"
+                />
+
+
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <button class="btn btn-primary d-grid w-100" type="submit">Se connecter</button>
+            </div>
+          </form>
+
+
+        </div>
+      </div>
+      <!-- /Register -->
+    </div>
+  </div>
+</div>
+

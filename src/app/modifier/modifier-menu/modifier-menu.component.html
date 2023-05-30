@@ -1,0 +1,86 @@
+<div class="content-wrapper">
+  <!-- Content -->
+
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> Modifier Menu</h4>
+
+    <!-- Basic Layout & Basic with Icons -->
+    <div class="row">
+      <!-- Basic Layout -->
+      <div class="col-xxl">
+        <div class="card mb-4">
+            <div class="card-body">
+
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">Demande Menu</label>
+                <div class="col-sm-10">
+                  <input [(ngModel)]="menu.pathMenu" type="file" class="form-control" id="basic-default-name" />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <h4 class="py-3 mb-4"><span class="text-muted fw-light"></span> Message spécieaux</h4>
+              </div>
+              <div class="row gy-3">
+                <div class="col-sm-4">
+                <div class="demo-inline-spacing">
+                  <input  type="checkbox" class="form-check-input"  placeholder="Nom CDC" />
+                  <label>Message pendant l'initialisation </label>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="demo-inline-spacing">
+                  <input  type="checkbox" class="form-check-input" placeholder="Source de données" />
+                  <label>Message pendant l'initialisation</label>
+                </div>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <h4 class="py-3 mb-4"><span class="text-muted fw-light"></span> Calculateur pour Affichage</h4>
+              </div>
+              <div class="row gy-3">
+                <div class="col-sm-4">
+                <div class="demo-inline-spacing">
+                  <label>Calculateur Sélectionné </label>
+                  <input  type="text" class="form-control"  placeholder="calculateur" />
+
+
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="demo-inline-spacing">
+                  <label>Liste des calculateurs</label>
+                  <div class="table-responsive text-nowrap">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>N</th>
+                          <th >famille</th>
+                          <th >Ecu</th>
+                          <th >Type injection</th>
+                          <th>Actions </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td ></td>
+                          </tr>
+
+
+
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,65 @@
+
+<div class="layout-wrapper layout-content-navbar">
+  <div class="layout-container">
+    <!-- Menu -->
+
+    <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+      <div class="app-brand demo">
+
+        <div class="center">
+          <img width="210" src="assets/assets/img/logo.png" alt="#" />
+       </div>
+        <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+          <i class="bx bx-chevron-left bx-sm align-middle"></i>
+        </a>
+      </div>
+
+      <div class="menu-inner-shadow">
+
+      </div>
+
+      <ul class="menu-inner py-1">
+        <!-- Dashboard -->
+        <li class="menu-item">
+          <a routerLink="/dashboard/gestion-utilisateur" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+            <div data-i18n="Analytics">Gestion utilisateur</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a routerLink="/dashboard/contexte-developpement" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+            <div data-i18n="Analytics">Gestion Contexte de developpement </div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a routerLink="/dashboard/developpement" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-box"></i>
+            <div data-i18n="Analytics">Gestion developpement </div>
+          </a>
+        </li>
+        <!--li class="menu-item">
+          <a routerLink="/home-contexte/gestion-cdc" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-box"></i>
+            <div data-i18n="Analytics">Gestion CDC </div>
+          </a>
+        </li-->
+        <li class="menu-item">
+          <a routerLink="/dashboard/integration" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-dock-top"></i>
+            <div data-i18n="Analytics">Intégration </div>
+          </a>
+        </li>
+
+      </ul>
+    </aside>
+    <div class="content-wrapper">
+      <!-- Content -->
+      <div class="container-xxl flex-grow-1 container-p-y"><router-outlet></router-outlet></div>
+
+
+      <div class="content-backdrop fade"></div>
+    </div>
+  </div>
+</div>
+

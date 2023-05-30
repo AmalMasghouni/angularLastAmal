@@ -1,0 +1,64 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+  <div class=" py-3 mb-4">
+  <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+    <!-- Search -->
+      <div class="navbar-nav align-items-center">
+      <div class="nav-item d-flex align-items-center">
+        <i class="bx bx-search fs-4 lh-0"></i>
+        <input [(ngModel)]="searchTerm"
+          type="text"
+          class="form-control border-0 shadow-none"
+          placeholder="Nom Marque"
+          (input)="performSearch()"
+        />
+
+      </div>
+    </div>
+
+  </div>
+
+<hr class="my-5" />
+
+  <!-- Bordered Table -->
+  <div class="card">
+    <h5 class="card-header">Liste Marque</h5>
+    <button routerLink="/ajout-marque" class="btn btn-primary" type="button" id="button-addon2">Ajouter</button>
+    <div class="card-body">
+      <div class="table-responsive text-nowrap">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Nom Marque</th>
+              <th >Geo</th>
+              <th >Profile</th>
+              <th >Cible</th>
+              <th>Actions </th>
+            </tr>
+          </thead>
+          <tbody>
+
+              <tr  *ngFor="let m of marque " >
+                <td class="cell" >{{m.nommar}}</td>
+                <td class="cell" >{{m.geo}}</td>
+                <td class="cell" >{{m.profil}}</td>
+                <td class="cell" >{{m.cible}}</td>
+
+              <td>
+                <div class="dropdown">
+                  <button class="btn btn-warning" [routerLink]="['/modifier-marque',m.codmar]"><i class="bx bx-edit-alt me-1"></i> </button>
+                  <button class="btn btn-danger" (click)="delete(m.codmar)"> <i class="bx bx-trash me-1"></i> </button>
+                 </div>
+
+              </td>
+            </tr>
+
+
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!--/ Bordered Table -->
+</div>
+</div>

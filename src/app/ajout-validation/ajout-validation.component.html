@@ -1,0 +1,62 @@
+<div class="content-wrapper">
+  <!-- Content -->
+
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4">Ajout Validation</h4>
+
+    <!-- Basic Layout & Basic with Icons -->
+    <div class="row">
+      <!-- Basic Layout -->
+      <div class="col-xxl">
+        <div class="card mb-4">
+
+          <div class="card-body">
+<div class="row mb-3">
+                <label class="col-sm-2 col-form-label" >Date </label>
+                <div class="col-sm-10">
+                  <input [(ngModel)]="version.DateValid" class="form-control" type="date" value="2021-06-18" id="html5-date-input" />
+                </div>
+              </div>
+            <div class="mb-3">
+                <label for="exampleFormControlSelect1" class="form-label">Type</label>
+                <select [(ngModel)]="version.typeValid" class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
+                  <option selected value="GT">Test Intégration </option>
+                  <option value="vehicule">Vehicule</option>
+
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlSelect1" class="form-label">Etat</label>
+                <select [(ngModel)]="version.EtatValid" class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
+                  <option selected value="correct">Correct</option>
+                  <option value="incorrect">Incorrect</option>
+
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlSelect1" class="form-label">Version</label>
+                <select [(ngModel)]="version.idVer" class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
+                  <option selected value="">Selectionner La version</option>
+                  <option *ngFor="let v of ver " [value]="v">{{v}}</option>
+
+
+                </select>
+              </div>
+              <div class="row justify-content-end">
+                <div class="col-sm-10">
+                  <button type="submit" class="btn btn-primary" (click)="ajouter()">Ajouter</button>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- / Content -->
+
+
+
+  <div class="content-backdrop fade"></div>
+</div>
